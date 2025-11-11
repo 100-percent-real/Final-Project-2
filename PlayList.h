@@ -1,3 +1,11 @@
+/*
+TeamName.txt
+CMPR 131 - Fall 2025
+November 23, 2025
+Final Project #2
+Collaboration:
+Dobritsa Alexey, Eli Christiansen, Kevin Mabry, Ethan Hoang
+ */
 #pragma once
 
 #include"Song.h"
@@ -15,10 +23,10 @@ public:
 	void printListByGenre()const;
 	void printListByArtist()const;
 	void removeSong(string name);
-	void addSong(string name, double duration, string artist, string genre); 
-	void shortenTo(int x); 
+	void addSong(string name, double duration, string artist, string genre);
+	void shortenTo(int x);
 	void changeAutoDeleteThreshhold(int x);
-	void switchMaximumtype(); 
+	void switchMaximumtype();
 	void changeCapacity(int x);
 	~PlayList();
 };
