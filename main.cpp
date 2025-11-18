@@ -11,14 +11,15 @@ Dobritsa Alexey, Eli Christiansen, Kevin Mabry, Ethan Hoang
 int main()
 {
 	PlayList myPlayList;
-	short int choice;
+	int choice;
 
 	do
 	{
-		cout << "\n === MUSIC PLAYLIST MENU ===\n";
+		cout << "\n ===== MUSIC PLAYLIST MENU =====\n";
 		cout << "\nselect an option\n";
-		cout << "\n#1: add a song\n"
-			<< "\n#2: show songs by date added\n"
+		cout << "\n#1: Add a song\n"
+			<< "\n#2: Show songs by date added\n"
+			<< "\n#3: Delete a song\n"
 			<< "\n#0: EXIT the program\n";
 		// continue needed
 
@@ -55,13 +56,25 @@ int main()
 			myPlayList.addSong(name, duration, artist, genre);
 			cout << "\nSong has been successfully added!\n";
 			break;
-			system("cls");
 		}
 		case 2:
 		{
 			system("cls");
 			cout << "Songs By date added:\n";
 			myPlayList.printListByDateAdded();
+
+			system("pause");
+			system("cls");
+			break;
+		}
+		case 3:
+		{
+			system("cls");
+			string name;
+			cout << "Which song you want to delete:\n";
+			getline(cin, name);
+			//cin.ignore();
+			myPlayList.removeSong(name);
 
 			system("pause");
 			system("cls");
@@ -78,6 +91,7 @@ int main()
 		{
 			system("cls");
 			cout << "invalid choice, try again...\n";
+			
 		}
 		}
 	} while (choice != 0);

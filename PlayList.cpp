@@ -50,7 +50,18 @@ void PlayList::printListByArtist() const
 
 void PlayList::removeSong(string name)
 {
+	for (auto ptr = playList.begin(); ptr != playList.end(); ptr++)
+	{
+		if (ptr->songName == name)
+		{
+			playList.erase(ptr);
+			cout << "\nThe Song: " << name << " was removed from your playlist\n";
+			return;
+		}
+	}
 
+	cout << "Song you entered " << name << " is not in your playlist"
+		<< " so it was not deleted.\n";
 }
 
 void PlayList::addSong(string name, double duration, string artist, string genre)
