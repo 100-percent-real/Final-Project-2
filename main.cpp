@@ -4,7 +4,7 @@ CMPR 131 - Fall 2025
 November 23, 2025
 Final Project #2
 Collaboration:
-Dobritsa Alexey, Eli Christiansen, Kevin Mabry, Ethan Hoang
+Dobritsa Alexey, *Eli Christiansen, Kevin Mabry, Ethan Hoang
  */
 #include "PlayList.h"
 
@@ -29,33 +29,7 @@ int main()
 		{
 		case 1:
 		{
-			string name;
-			string artist;
-			string genre;
-			double duration = 0.0;
-
-			system("cls");
-			cout << "Entering song's information\n";
-
-			cout << "Enter song name: ";
-			getline(cin, name);
-
-			cout << "Enter artist name: ";
-			getline(cin, artist);
-
-			cout << "Enter genre: ";
-			getline(cin, genre);
-
-			cout << "Enter Duration (minutes): ";
-			cin >> duration;
-			cin.ignore();
-
-			system("cls");
-
-			myPlayList.addSong(name, duration, artist, genre);
-			cout << "\nSong has been successfully added!\n";
-			break;
-			system("cls");
+			myPlayList.addSong();
 		}
 		case 2:
 		{
