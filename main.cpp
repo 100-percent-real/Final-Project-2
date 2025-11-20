@@ -19,6 +19,8 @@ int main()
 		cout << "\nselect an option\n";
 		cout << "\n#1: add a song\n"
 			<< "\n#2: show songs by date added\n"
+			<< "\n#3: show songs by duration\n"
+			<< "\n#4: change playlist capacity\n"
 			<< "\n#0: EXIT the program\n";
 		// continue needed
 
@@ -62,6 +64,36 @@ int main()
 			system("cls");
 			cout << "Songs By date added:\n";
 			myPlayList.printListByDateAdded();
+
+			system("pause");
+			system("cls");
+			break;
+		}
+		case 3:
+		{
+			system("cls");
+			cout << "Show songs By duration:\n";
+			cout << "1. Shortest to longest\n";
+			cout << "2. Longest to shortest\n";
+
+			int orderChoice;
+			cin >> orderChoice;
+			cin.ignore();
+
+			myPlayList.printListBySongDuration(orderChoice == 1);
+
+			system("pause");
+			system("cls");
+			break;
+		}
+		case 4:
+		{
+			system("cls");
+			int newCapacity;
+			cout << "Enter new playlist capacity: ";
+			cin >> newCapacity;
+			cin.ignore();
+			myPlayList.changeCapacity(newCapacity);
 
 			system("pause");
 			system("cls");

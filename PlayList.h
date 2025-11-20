@@ -14,12 +14,13 @@ class PlayList
 {
 private:
 	list<Song> playList;
+	int capacity;
 public:
 	PlayList();
-	int getTotalDuration()const;
+	double getTotalDuration()const;
 	void printListByDateAdded()const;
 	void printListByInverseDateAdded()const;
-	void printListBySongDurration()const;
+	void printListBySongDuration(bool ascending = true)const;
 	void printListByGenre()const;
 	void printListByArtist()const;
 	void removeSong(string name);
