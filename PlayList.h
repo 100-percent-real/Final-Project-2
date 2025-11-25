@@ -4,30 +4,44 @@ CMPR 131 - Fall 2025
 November 23, 2025
 Final Project #2
 Collaboration:
-Dobritsa Alexey, Eli Christiansen, Kevin Mabry, Ethan Hoang
+Dobritsa Alexey, *Eli Christiansen, Kevin Mabry, Ethan Hoang
  */
-#pragma once
 
-#include"Song.h"
+#include "Song.h"
 
 class PlayList
 {
+	friend class PrintedArray;
 private:
-	list<Song> playList;
-	int capacity;
+	std::list<Song> playList;
+	bool maxType;
+
+	// True == Maximum number of skips
+	// False == maximum number of songs
+	int skipMax;
+	int songMax;
 public:
 	PlayList();
 	double getTotalDuration()const;
+
 	void printListByDateAdded()const;
-	void printListByInverseDateAdded()const;
-	void printListBySongDuration(bool ascending = true)const;
-	void printListByGenre()const;
-	void printListByArtist()const;
-	void removeSong(string name);
-	void addSong(string name, double duration, string artist, string genre);
-	void shortenTo(int x);
-	void changeAutoDeleteThreshhold(int x);
-	void switchMaximumtype();
-	void changeCapacity(int x);
+	void printListByInverseDateAdded();
+	void printListBySongDuration(bool ascending)const;
+	void printGenre(std::string genreChoice)const;
+	void printArtist(std::string artistName)const;
+
+	void removeSongByName(std::string name);
+
+	void removeMostSkippedSong();
+
+	void addSong();
+	void startPlayList();
+
+
+	void changeSkipMax(int x);
+	void switchMaxType();
+	void changeSongMax(int x);
+
+	void removalCheck();
 	~PlayList();
 };
